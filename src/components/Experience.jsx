@@ -1,28 +1,20 @@
 import {
   VerticalTimeline,
   VerticalTimelineElement,
-} from "react-vertical-timeline-component"; // These components are for creating the vertical timeline UI
-import { motion } from "framer-motion"; // For animations and motion effects
-// Changed from react-motion to framer-motion
-
-import "react-vertical-timeline-component/style.min.css"; // Required CSS for the timeline component
-
-import { styles } from "../styles"; // Custom styles from your project
-import { experiences } from "../constants"; // Your work experience data
-import { SectionWrapper } from "../hoc"; // Higher Order Component for section wrapping
+} from "react-vertical-timeline-component"; // Timeline component
+import { motion } from "framer-motion"; // For animations
+import "react-vertical-timeline-component/style.min.css"; // Import timeline CSS
+import { styles } from "../styles"; // Custom styles
+import { experiences } from "../constants"; // Work experience data
+import { SectionWrapper } from "../hoc"; // HOC for section wrapping
 import { textVariant } from "../utils/motion"; // Animation variants
 
 const ExperienceCard = ({ experience }) => (
   <VerticalTimelineElement
-    // Styling for the timeline element content
-    contentStyle={{ background: "#1d1836", color: "#fff" }}
-    // Styling for the arrow pointing to the timeline
-    contentArrowStyle={{ borderRight: "7px solid #232631" }}
-    // When this experience occurred
-    date={experience.date}
-    // Styling for the icon circle
-    iconStyle={{ background: experience.iconBg }}
-    // The icon container
+    contentStyle={{ background: "#1d1836", color: "#fff" }} // Timeline content style
+    contentArrowStyle={{ borderRight: "7px solid #232631" }} // Arrow style
+    date={experience.date} // Experience date
+    iconStyle={{ background: experience.iconBg }} // Icon circle style
     icon={
       <div className="flex justify-center items-center w-full h-full">
         <img
@@ -33,26 +25,17 @@ const ExperienceCard = ({ experience }) => (
       </div>
     }
   >
-    {/* Content section for each timeline element */}
     <div>
       {/* Job title */}
       <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>
       {/* Company name */}
-      <p
-        className="text-secondary text-[16px] font-semibold"
-        style={{ margin: 0 }}
-      >
-        {experience.company_name}
-      </p>
+      <p className="text-secondary text-[16px] font-semibold mt-1">{experience.company_name}</p>
     </div>
 
-    {/* List of responsibilities/achievements */}
+    {/* List of responsibilities */}
     <ul className="mt-5 list-disc ml-5 space-y-2">
       {experience.points.map((point, index) => (
-        <li
-          key={`experience-point-${index}`}
-          className="text-white-100 text-[14px] pl-1 tracking-wider"
-        >
+        <li key={`experience-point-${index}`} className="text-white text-[14px] pl-1 tracking-wider">
           {point}
         </li>
       ))}
@@ -65,16 +48,14 @@ const Experience = () => {
     <>
       {/* Animated section header */}
       <motion.div variants={textVariant()}>
-        {/* Subheading */}
-        <p className={styles.sectionSubText}>What I have done so far</p>
-        {/* Main heading */}
-        <h2 className={styles.sectionHeadText}>Work Experience</h2>
+        <p className={`${styles.sectionSubText} text-center`}>What I have done so far</p>
+        <h2 className={`${styles.sectionHeadText} text-center`}>Work Experience</h2>
       </motion.div>
 
       {/* Timeline container */}
-      <div className="mt-20 flex flex-col">
+      <div className="mt-20 flex flex-col items-center">
         <VerticalTimeline>
-          {/* Map through all experiences and create a card for each */}
+          {/* Render experiences dynamically */}
           {experiences.map((experience, index) => (
             <ExperienceCard key={index} experience={experience} />
           ))}
@@ -84,5 +65,5 @@ const Experience = () => {
   );
 };
 
-// Wrap the component with the SectionWrapper HOC
+// Wrap with SectionWrapper HOC
 export default SectionWrapper(Experience, "work");

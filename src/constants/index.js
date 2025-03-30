@@ -15,15 +15,13 @@ import {
     git,
     figma,
     docker,
-    meta,
-    starbucks,
-    tesla,
-    shopify,
-    carrent,
-    jobit,
-    tripguide,
     threejs,
   } from "../assets";
+
+  import filmImage from '../assets/company/films.png'; 
+  import job from '../assets/company/jobportal.png'
+  import Det from '../assets/company/detection.png'
+
   
   export const navLinks = [
     {
@@ -191,7 +189,7 @@ import {
           color: "pink-text-gradient",
         },
       ],
-      image: "path-to-your-job-portal-image", // Add your project image here
+      image: job, // Add your project image here
       source_code_link: "https://github.com/Himanshu-test-account/Job_Portal",
     },
     {
@@ -212,7 +210,7 @@ import {
           color: "pink-text-gradient",
         },
       ],
-      image: "path-to-your-brain-tumor-image", // Add your project image here
+      image: Det, 
       source_code_link: "https://github.com/Himanshu-test-account/brain-tumor-prediction-system",
     },
     {
@@ -233,7 +231,7 @@ import {
           color: "pink-text-gradient",
         },
       ],
-      image: "path-to-your-netflix-image", // Add your project image here
+      image: filmImage, 
       source_code_link: "https://github.com/Himanshu-test-account/netflix_youtube",
     },
   ];
