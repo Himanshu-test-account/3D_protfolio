@@ -76,8 +76,8 @@ const Works = () => {
     <>
       {/* Section header with animation */}
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>What I have done so far</p>  // Subtitle
-        <h2 className={styles.sectionHeadText}>Work Experience</h2>  // Main title
+        <p className={styles.sectionSubText}>My work</p>  // Subtitle
+        <h2 className={styles.sectionHeadText}>Projects.</h2>  // Main title
       </motion.div>
 
       {/* Section description */}

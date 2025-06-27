@@ -45,11 +45,14 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        I'am skilled Mern stack developer with experience in Typescript and
-        Javascript and expertise in frameworks like React, Node.js and three.js.
-        I'am quick learner and collaborative closely with clients to create
-        efficient, scalable, and user-friendly solutions that solve real-world
-        problems. Let's work together to bring your ideas to life
+        Motivated and detail-oriented B.Tech Computer Science student with a
+        strong foundation in software development, web technologies, and machine
+        learning. Demonstrated ability to apply academic knowledge through
+        hands-on projects like job portals, streaming platforms, and medical
+        image analysis using deep learning. Familiar with Agile methodologies
+        and software development lifecycles (SDLC & STLC) through real-world
+        simulations. Quick learner, strong team player, and passionate about
+        solving problems and exploring new technologies.
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">

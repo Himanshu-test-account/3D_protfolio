@@ -14,14 +14,12 @@ const FeedbackCard = ({
   company,      // Their company
   image,        // Their profile picture
 }) => (
-  // Note: There's a bug here - the component is missing a return statement
-  // Should be: return (
   <motion.div
     // Animate card with fade in effect, delayed based on index
     variants={fadeIn("", "spring", index * 0.5, 0.75)}
-    className="bg-black-200 p-10 rounded-3xl x5:w-[320px] w-full"
+    className="bg-black-200 p-10 rounded-3xl xs:w-[320px] w-full"
   >
-    <p className="text-white font-black text-[48px]"></p> {/* Empty quote mark container */}
+    <p className="text-white font-black text-[48px]">"</p> {/* Empty quote mark container */}
 
     <div className="mt-1">
       {/* Testimonial text */}
@@ -63,7 +61,7 @@ const Feedbacks = () => {
       </div>
 
       {/* Testimonials cards container */}
-      <div className={`${styles.paddingX} -mt-20 pb-14 flex-wrap gap-7`}>
+      <div className={`${styles.paddingX} -mt-20 pb-14 flex flex-wrap gap-7`}>
         {/* Map through testimonials data to create individual cards */}
         {testimonials.map((testimonial, index) => (
           <FeedbackCard

@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { logo, menu, close } from "../assets";
-import { li, nav } from "framer-motion/client";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -24,7 +23,7 @@ const Navbar = () => {
           }}
         >
           <div className="w-9 h-9 rounded-full overflow-hidden bg-white flex items-center justify-center">
-            <img src={logo} alt="logo" className="w-full h-full object-cover" />
+            <img src={logo} alt="logo" className="w-full h-full object-contain" />
           </div>
           
           <p className="text-white text-[18px] font-bold cursor-pointer flex">

@@ -11,7 +11,7 @@ const Contact = () => {
   const [form, setForm] = useState({
     name: "",
     email: "",
-    messgae: "",
+    message: "",
   });
   const [loading, setLoading] = useState(false);
 
@@ -27,8 +27,8 @@ const Contact = () => {
   
     emailjs
       .send(
-        "service_rxp4wtp",
-        "template_bgpxfyh",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name, 
           to_name: "Himanshu",
@@ -36,8 +36,7 @@ const Contact = () => {
           to_email: "himanshuyadav1727@gmail.com",
           message: form.message, 
         },
-        // public key
-        'GeTpFi0_yCtt8Xqpd'
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(
         () => {
@@ -83,35 +82,35 @@ const Contact = () => {
               value={form.name}
               onChange={handleChange}
               placeholder="What's your name ?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium"
+              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg focus:outline-none border-none font-medium"
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Name</span>
+            <span className="text-white font-medium mb-4">Your Email</span>
             <input
               type="email"
               name="email"
               value={form.email}
               onChange={handleChange}
               placeholder="What's your email ?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium"
+              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg focus:outline-none border-none font-medium"
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Name</span>
+            <span className="text-white font-medium mb-4">Your Message</span>
             <textarea
               rows="7"
               name="message"
               value={form.message}
               onChange={handleChange}
               placeholder="What's your want to say ?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium"
+              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg focus:outline-none border-none font-medium"
             />
           </label>
 
           <button
             type="submit"
-            className="bg-tertary py3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl"
+            className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl"
           >
             {loading ? `Sending...` : `Send`}
           </button>
